@@ -10,6 +10,7 @@ const VentasSchema = new Schema({
   fechaVenta: { type: Date, required: true },
   valorVenta: { type: Number, required: true },
   descripcionVenta: { type: Array, required: true },
+  updateTo: { type: Array, required: false }
 });
 
 module.exports = mongoose.model("Ventas", VentasSchema);

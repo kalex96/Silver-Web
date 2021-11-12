@@ -9,15 +9,15 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    const {nombreCliente, cedulaCliente, nombreVendedor, estadoVenta, fechaVenta, valorVenta, descripcionVenta} = req.body;
-    const venta = new Ventas({nombreCliente, cedulaCliente, nombreVendedor, estadoVenta, fechaVenta, valorVenta, descripcionVenta});
+    const {nombreCliente, cedulaCliente, nombreVendedor, estadoVenta, fechaVenta, valorVenta, descripcionVenta, updateTo} = req.body;
+    const venta = new Ventas({nombreCliente, cedulaCliente, nombreVendedor, estadoVenta, fechaVenta, valorVenta, descripcionVenta, updateTo});
     await venta.save();
     res.json({status: 'Venta guardada'});
 });
 
 router.put('/:id', async (req, res) => {
-    const {nombreCliente, cedulaCliente, nombreVendedor, estadoVenta, fechaVenta, valorVenta, descripcionVenta} = req.body;
-    const nuevoProducto = {nombreCliente, cedulaCliente, nombreVendedor, estadoVenta, fechaVenta, valorVenta, descripcionVenta};
+    const {nombreCliente, cedulaCliente, nombreVendedor, estadoVenta, fechaVenta, valorVenta, descripcionVenta, updateTo} = req.body;
+    const nuevoProducto = {nombreCliente, cedulaCliente, nombreVendedor, estadoVenta, fechaVenta, valorVenta, descripcionVenta, updateTo};
     await Ventas.findByIdAndUpdate(req.params.id, nuevoProducto);
     res.json({status: 'Venta actualizada'});
 });
