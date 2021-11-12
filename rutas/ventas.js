@@ -9,15 +9,15 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    const {totalVenta,idProducto,cantidad,precioUnitario,fechaVenta,cedulaCliente,nombreCliente,idVendedor} = req.body;
-    const venta = new Ventas({totalVenta,idProducto,cantidad,precioUnitario,fechaVenta,cedulaCliente,nombreCliente,idVendedor});
+    const {nombreCliente, cedulaCliente, nombreVendedor, estadoVenta, fechaVenta, valorVenta, descripcionVenta} = req.body;
+    const venta = new Ventas({nombreCliente, cedulaCliente, nombreVendedor, estadoVenta, fechaVenta, valorVenta, descripcionVenta});
     await venta.save();
     res.json({status: 'Venta guardada'});
 });
 
 router.put('/:id', async (req, res) => {
-    const {totalVenta,idProducto,cantidad,precioUnitario,fechaVenta,cedulaCliente,nombreCliente,idVendedor} = req.body;
-    const nuevoProducto = {totalVenta,idProducto,cantidad,precioUnitario,fechaVenta,cedulaCliente,nombreCliente,idVendedor};
+    const {nombreCliente, cedulaCliente, nombreVendedor, estadoVenta, fechaVenta, valorVenta, descripcionVenta} = req.body;
+    const nuevoProducto = {nombreCliente, cedulaCliente, nombreVendedor, estadoVenta, fechaVenta, valorVenta, descripcionVenta};
     await Ventas.findByIdAndUpdate(req.params.id, nuevoProducto);
     res.json({status: 'Venta actualizada'});
 });
