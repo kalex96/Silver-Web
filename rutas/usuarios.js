@@ -9,15 +9,15 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    const {correo, nombre, cargo, addTo} = req.body;
-    const uruarios = new Usuarios({correo, nombre, cargo, addTo});
+    const {correo, identificacion,nombre, tipo,password,estado,editBy} = req.body;
+    const uruarios = new Usuarios({correo, identificacion,nombre, tipo,password,estado,editBy});
     await uruarios.save();
     res.json({status: 'Usuario guardado'});
 });
 
 router.put('/:id', async (req, res) => {
-    const {correo, nombre, cargo, addTo} = req.body;
-    const nuevoUsuario = {correo, nombre, cargo, addTo};
+    const {correo, identificacion,nombre, tipo,password,estado,editBy} = req.body;
+    const nuevoUsuario = {correo, identificacion,nombre, tipo,password,estado,editBy};
     await Usuarios.findByIdAndUpdate(req.params.id, nuevoUsuario);
     res.json({status: 'Usuario actualizado'});
 });
