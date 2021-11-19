@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const path = require("path");
 const cors = require("cors");
 const { mongoose } = require("./database");
 
@@ -15,12 +14,14 @@ app.use(cors());
 
 // Routes
 app.use("/usuarios", require("./rutas/usuarios"));
-
-// Static files
-//app.use(express.static(path.join(__dirname, "public")));
+app.use("/proyectos", require("./rutas/proyectos"));
 
 // Starting the server
 app.get("/usuarios", function (req, res, next) {
+  res.json({ msg: "This is CORS-enabled for all origins!" });
+});
+
+app.get("/proyectos", function (req, res, next) {
   res.json({ msg: "This is CORS-enabled for all origins!" });
 });
 
