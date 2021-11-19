@@ -1,5 +1,5 @@
 {
-    "name": "sprint6",
+    "name": "sprint2",
     "version": "1.0.0",
     "description": "sprint6",
     "main": "app.js",
@@ -15,12 +15,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/j0s34m1g0/sprint6.git"
+        "url": "git+https://github.com/kalex96/Silver-Web.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/j0s34m1g0/sprint6.git/issues"
+        "url": "https://github.com/kalex96/Silver-Web.git/issues"
     }
 }
