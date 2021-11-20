@@ -20,6 +20,8 @@ router.post("/", async (req, res) => {
     estado,
     fase,
     estudiantes,
+    avance,
+    inscripciones
   } = req.body;
   const proyectos = new Proyectos({
     nombre,
@@ -32,6 +34,8 @@ router.post("/", async (req, res) => {
     estado,
     fase,
     estudiantes,
+    avance,
+    inscripciones
   });
   await proyectos.save();
   res.json({ status: "Proyecto guardado" });
@@ -49,6 +53,8 @@ router.put("/:id", async (req, res) => {
     estado,
     fase,
     estudiantes,
+    avance,
+    inscripciones
   } = req.body;
   const nuevoProyecto = {
     nombre,
@@ -61,6 +67,8 @@ router.put("/:id", async (req, res) => {
     estado,
     fase,
     estudiantes,
+    avance,
+    inscripciones
   };
   await Proyectos.findByIdAndUpdate(req.params.id, nuevoProyecto);
   res.json({ status: "Proyecto actualizado" });
