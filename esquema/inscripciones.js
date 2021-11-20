@@ -6,8 +6,8 @@ const InscripcionesSchema = new Schema({
     idProyecto: {type:String, required:true},
     idEstudiante: {type:String, required:true},
     estado: {type:String, required:true},
-    fechaIngreso: {type:String, required:true},
-    fechaEgreso: {type:String, required:true}
+    fechaIngreso: {type:Date, required:true},
+    fechaEgreso: {type:Date, required:true}
 });
 
 module.exports = mongoose.model('Inscripciones', InscripcionesSchema)

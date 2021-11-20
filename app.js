@@ -16,6 +16,7 @@ app.use(cors());
 app.use("/usuarios", require("./rutas/usuarios"));
 app.use("/proyectos", require("./rutas/proyectos"));
 app.use("/inscripciones", require("./rutas/inscripciones"));
+app.use("/avance", require("./rutas/avance"));
 
 // Starting the server
 app.get("/usuarios", function (req, res, next) {
@@ -30,6 +31,9 @@ app.get("/inscripciones", function (req, res, next) {
   res.json({ msg: "This is CORS-enabled for all origins!" });
 });
 
+app.get("/avance", function (req, res, next) {
+  res.json({ msg: "This is CORS-enabled for all origins!" });
+});
 
 app.listen(app.get('port'), function () {
   console.log("CORS-enabled web server listening on port 3000");
