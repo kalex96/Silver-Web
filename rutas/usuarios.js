@@ -8,6 +8,11 @@ router.get("/", async (req, res) => {
   res.json(usuarios);
 });
 
+router.get("/:id", async (req, res) => {
+  const usuariosxId = await Usuarios.findById(req.params.id);
+  res.json(usuariosxId);
+});
+
 router.post("/", async (req, res) => {
   const { correo, identificacion, nombre, tipo, password, estado, editBy } =
     req.body;
@@ -43,11 +48,6 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   await Usuarios.findByIdAndRemove(req.params.id);
   res.json({ status: "Usuario eliminado" });
-});
-
-router.get("/:id", async (req, res) => {
-  const usuariosxId = await Usuarios.findById(req.params.id);
-  res.json(usuariosxId);
 });
 
 module.exports = router;

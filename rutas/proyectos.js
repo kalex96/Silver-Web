@@ -8,6 +8,11 @@ router.get("/", async (req, res) => {
   res.json(proyectos);
 });
 
+router.get("/:id", async (req, res) => {
+  const proyectoxId = await Proyectos.findById(req.params.id);
+  res.json(proyectoxId);
+});
+
 router.post("/", async (req, res) => {
   const {
     nombre,
@@ -19,7 +24,6 @@ router.post("/", async (req, res) => {
     idLider,
     estado,
     fase,
-    estudiantes,
     avance,
     inscripciones,
   } = req.body;
@@ -33,7 +37,6 @@ router.post("/", async (req, res) => {
     idLider,
     estado,
     fase,
-    estudiantes,
     avance,
     inscripciones,
   });
@@ -51,10 +54,7 @@ router.put("/:id", async (req, res) => {
     fechaFin,
     idLider,
     estado,
-    fase,
-    estudiantes,
-    avance,
-    inscripciones,
+    fase
   } = req.body;
   const nuevoProyecto = {
     nombre,
@@ -65,10 +65,7 @@ router.put("/:id", async (req, res) => {
     fechaFin,
     idLider,
     estado,
-    fase,
-    estudiantes,
-    avance,
-    inscripciones,
+    fase
   };
   await Proyectos.findByIdAndUpdate(req.params.id, nuevoProyecto);
   res.json({ status: "Proyecto actualizado" });
@@ -110,11 +107,6 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   await Proyectos.findByIdAndRemove(req.params.id);
   res.json({ status: "Proyecto eliminado" });
-});
-
-router.get("/:id", async (req, res) => {
-  const proyectoxId = await Proyectos.findById(req.params.id);
-  res.json(proyectoxId);
 });
 
 router.post("/agregar-inscripcion", async (req, res) => {
