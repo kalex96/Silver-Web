@@ -10,24 +10,7 @@ const ProyectosSchema = new Schema({
   fechaFin: { type: Date, required: true },
   idLider: { type: String, required: true },
   estado: { type: String, required: true },
-  fase: { type: String, required: true },
-  avance: [
-    {
-      fecha: { type: Date, required: true },
-      descripcion: { type: String, required: true },
-      observacion: { type: String, required: true },
-      idEstudiante: { type: String, required: true },
-      idLider: { type: String, required: true }
-    },
-  ],
-  inscripciones: [
-    {
-      idEstudiante: { type: String, required: true },
-      estado: { type: String, required: true },
-      fechaIngreso: { type: Date, required: true },
-      fechaEgreso: { type: Date, required: true }
-    },
-  ],
+  fase: { type: String, required: true }
 });
 
 module.exports = mongoose.model("Proyectos", ProyectosSchema);
