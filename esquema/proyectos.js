@@ -6,8 +6,8 @@ const ProyectosSchema = new Schema({
   oGenerales: { type: String, required: true },
   oEspecificos: { type: String, required: true },
   presupuesto: { type: String, required: true },
-  fechaInicio: { type: Date, required: true },
-  fechaFin: { type: Date, required: true },
+  fechaInicio: { type: String, required: true },
+  fechaFin: { type: String, required: true },
   idLider: { type: String, required: true },
   estado: { type: String, required: true },
   fase: { type: String, required: true }

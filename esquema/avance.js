@@ -3,7 +3,7 @@ const {Schema} = mongoose;
 
 const AvanceSchema = new Schema({
     idProyecto: {type:String, required:true},
-    fecha: {type:Date, required:true},
+    fecha: {type:String, required:true},
     descripcion: {type:String, required:true},
     observacion: {type:String, required:true},
     idEstudiante: {type:String, required:true},
