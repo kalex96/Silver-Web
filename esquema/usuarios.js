@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
-const UsuariosSchema = new Schema({
+const UsuarioSchema = new Schema({
     correo: {type:String, required:true},
     identificacion: {type:String, required:true},
     nombre: {type:String, required:true}, 
@@ -11,4 +11,4 @@ const UsuariosSchema = new Schema({
     editBy: {type:String, required:false},
 });
 
-module.exports = mongoose.model('Usuarios', UsuariosSchema)
+module.exports = mongoose.model('Usuario', UsuarioSchema);

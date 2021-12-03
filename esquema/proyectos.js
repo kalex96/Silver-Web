@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const ProyectosSchema = new Schema({
+const ProyectoSchema = new Schema({
   nombre: { type: String, required: true },
   oGenerales: { type: String, required: true },
   oEspecificos: { type: String, required: true },
@@ -13,4 +13,4 @@ const ProyectosSchema = new Schema({
   fase: { type: String, required: true }
 });
 
-module.exports = mongoose.model("Proyectos", ProyectosSchema);
+module.exports = mongoose.model("Proyecto", ProyectoSchema);

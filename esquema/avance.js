@@ -10,4 +10,4 @@ const AvanceSchema = new Schema({
     idLider: {type:String, required:true}
 });
 
-module.exports = mongoose.model('Avance', AvanceSchema) 
+module.exports = mongoose.model('Avance', AvanceSchema); 

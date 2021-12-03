@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
-const InscripcionesSchema = new Schema({
+const InscripcionSchema = new Schema({
     idProyecto: {type:String, required:true},
     idEstudiante: {type:String, required:true},
     estado: {type:String, required:true},
@@ -9,4 +9,4 @@ const InscripcionesSchema = new Schema({
     fechaEgreso: {type:String, required:true}
 });
 
-module.exports = mongoose.model('Inscripciones', InscripcionesSchema) 
+module.exports = mongoose.model('Inscripcion', InscripcionSchema) 
